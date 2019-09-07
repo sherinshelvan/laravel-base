@@ -1,0 +1,73 @@
+@extends('backend.layouts.app')
+<!-- Title -->
+@section('title', $head)
+
+<!-- Top Bar -->
+@section('top_bar')
+@parent
+@endsection
+
+<!-- Side Navigation -->
+@section('side_navigation')
+@parent
+@endsection
+
+<!-- Content -->
+@section('content')	
+   <div class="page">
+   		<h2>{{$page_heading}}</h2>
+   </div>    
+   <div class="main-wrap">
+		<div class="main-title">
+			<ul class="breadcrumb inline-menu">
+				<li ><a href="#">Home</a></li>
+				<li ><a href="#">{{$head}}</a></li>
+				<li>{{$page_heading}}</li>
+			</ul>
+			<h1>{{$page_heading}}</h1>
+		</div>
+	</div>
+	<div class="main-wrap">
+			<div class="card-box">
+                <div class="card-body">
+								{{ Html::ul($errors->all()) }}
+
+								{{ Form::open(array('url' => 'employee')) }}
+								
+								    <div class="form-group">
+								        {{ Form::label('first_name', 'First Name') }}
+								        {{ Form::text('first_name', Input::old('first_name'), array('class' => 'form-control')) }}
+								    </div>
+								    <div class="form-group">
+								        {{ Form::label('last_name', 'Last Name') }}
+								        {{ Form::text('last_name', Input::old('last_name'), array('class' => 'form-control')) }}
+								    </div>
+								    <div class="form-group">
+								        {{ Form::label('user_name', 'User Name') }}
+								        {{ Form::text('user_name', Input::old('user_name'), array('class' => 'form-control')) }}
+								    </div>
+								    <div class="form-group">
+								        {{ Form::label('email', 'Email') }}
+								        {{ Form::email('email', Input::old('email'), array('class' => 'form-control')) }}
+								    </div>
+								    <div class="form-group">
+								        {{ Form::label('phone', 'Email') }}
+								        {{ Form::phone('phone', Input::old('phone'), array('class' => 'form-control')) }}
+								    </div>
+								
+								    {{ Form::submit('Create!', array('class' => 'btn btn-primary')) }}
+								
+								{{ Form::close() }}
+								
+                </div>
+           </div>
+		</div>
+@endsection
+
+@section('footer')
+@parent
+@endsection
+
+@section('page_script')
+dadsad
+@endsection
