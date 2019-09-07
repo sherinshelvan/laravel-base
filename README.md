@@ -1,1 +1,1 @@
-# bike-rental
+Laravel sample
